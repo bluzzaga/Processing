@@ -1,3 +1,5 @@
+// Code for: https://youtu.be/ysGg9F-rfbQ
+
 int cols, rows;
 int scl = 20;
 int w = 3000;        // width of world
