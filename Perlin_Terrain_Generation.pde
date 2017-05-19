@@ -35,6 +35,7 @@ void draw() {
   rotateX(PI/3);
   translate(-w/2, -h/2);
   
+  // Create terrain
   for (int y = 0; y < rows-1; y++) {
     beginShape(TRIANGLE_STRIP);
     for (int x = 0; x < cols; x++) {
@@ -45,6 +46,8 @@ void draw() {
     }
     endShape();
   }
+    
+    // Create clouds
     for (int y = 6; y < rows-1; y++) {
       beginShape(QUAD_STRIP);
       for (int x = 0; x < cols; x++) {
