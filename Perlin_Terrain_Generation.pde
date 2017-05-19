@@ -8,14 +8,14 @@ int z = -10;         // altitude of water
 float incr = 0.15;
 float flying = 0;
 float [][] terrain;
-float [][] clouds;
+float [][] water;
 
 void setup() {
   size(1280, 720, P3D);
   cols = w / scl;
   rows = h / scl;
   terrain = new float[cols][rows];
-  clouds = new float [cols][rows];
+  water = new float [cols][rows];
 }
 
 void draw() {
@@ -26,7 +26,7 @@ void draw() {
     float xoff = 0;
     for (int x = 0; x < cols; x++) {
       terrain[x][y] = map(noise(xoff, yoff), 0, 1, -100, 100);  // z-coordinate of terrain
-      clouds[x][y] = map(noise(xoff, yoff), 0, 1, 70, 130);     // alpha of clouds
+      water[x][y] = map(noise(xoff, yoff), 0, 1, 70, 130);     // alpha of water
       xoff += incr;
     }
     yoff += incr;
@@ -49,11 +49,11 @@ void draw() {
     endShape();
   }
     
-    // Create clouds
+    // Create water
     for (int y = 6; y < rows-1; y++) {
       beginShape(QUAD_STRIP);
       for (int x = 0; x < cols; x++) {
-        fill(0, 150+(y*2), 255, clouds[x][y]);
+        fill(0, 150+(y*2), 255, water[x][y]);
         noStroke();
         vertex(x*scl, y*scl, z);
         vertex(x*scl, (y+1)*scl, z);
