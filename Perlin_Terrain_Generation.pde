@@ -4,7 +4,7 @@ int cols, rows;
 int scl = 20;
 int w = 3000;        // width of world
 int h = 1500;        // height of world
-int z = -10;         // height of water
+int z = -10;         // altitude of water
 float incr = 0.15;
 float flying = 0;
 float [][] terrain;
