@@ -1,3 +1,5 @@
+// Code for: https://youtu.be/QFLs5vgLoQM
+
 int cols, rows;
 int scale = 50;
 int w = 3000;
@@ -5,7 +7,6 @@ int h = 1500;
 float incr = 0.15;
 float flying = 0;
 int range = 600;
-int frame = 0;
 float[][] altitude;
 
 void setup() {
@@ -41,8 +42,4 @@ void draw() {
     }
     translate(-w, scale, 0);
   }
-  if (frame <= 299) {
-    saveFrame("output/box_###.png");
-  }
-  frame += 1;
 }
